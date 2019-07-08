@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jie.dao.LoginDaoI">
+    <select id="selectUser" resultType="com.wan.dto.LoginDto">
+        select USER_ID            as userId,
+               log_in.EMPLOYEE_ID as employeeId,
+               EMM_PASSWORD       as emmPassword,
+               EMPLOYEE_NAME      AS employeeName,
+               DEPARTMENT_ID      as departmentId,
+               POSITON_ID         as positonId,
+               PHONE              as phone,
+               EMAIL              as email,
+               `STATUS`           as status,
+               PARENT_EMPLOYEE_ID as parentEmployeeId,
+               CREATE_TIME        as createTime,
+               UPDATE_TIME        as updateTime
+        from log_in,
+             employee
+        where log_in.EMPLOYEE_ID = #{employeeId}
+          and EMM_PASSWORD = #{password}
+          and log_in.EMPLOYEE_ID = employee.EMPLOYEE_ID
+    </select>
+    <update id="updatePassword">
+        update log_in
+        set EMM_PASSWORD=#{password}
+        where EMPLOYEE_ID=employeeId
+    </update>
+</mapper>

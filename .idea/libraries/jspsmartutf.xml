@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jspsmartutf">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../jspsmartutf.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

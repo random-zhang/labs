@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jie.dao.BathMapper" >
+    <resultMap id="coordinatesMap" type="com.jie.bean.Coordinates">
+        <constructor>
+            <arg column="st" javaType="double"/>
+            <arg column="sv" javaType="double"/>
+            <arg  column="coordinates" javaType="String"/>
+        </constructor>
+        <!--<collection property="coordinates" javaType="ArrayList"  ofType="com.jie.bean.Coordinates$Point">
+            <constructor>
+                <arg column="LOANAMT"/>
+            </constructor>
+        </collection> -->
+    </resultMap>
+    <select id="getBath" parameterType="Integer" resultType="com.jie.bean.Bath">
+        select * from bath where subId=#{subId}
+    </select>
+    <update id="settingBath" parameterType="com.jie.bean.Bath" >
+        update bath
+          set sv=#{sv},cv=#{cv},st=#{st},ct=#{ct}
+          where subId=#{subId}
+    </update>
+    <update id="updateCv" >
+        update bath
+          set cv=#{cv}
+         where subId=#{subId}
+    </update>
+    <select id="getCv" parameterType="int" resultType="double">
+         select cv from bath   where subId=#{subId}
+    </select>
+    <update id="insertCoordinate">
+        update bath
+         set coordinates=concat(coordinates,#{coordinate})
+         where subId=#{subId}
+    </update>
+    <update id="clearCoordinate">
+        update bath
+        set coordinates=''
+        where subId=#{subId}
+    </update>
+    <select id="getCoordinates" parameterType="int" resultMap="coordinatesMap">
+          select st,sv,coordinates
+          from bath
+          where subId=#{subId}
+    </select>
+    <select id="getCoordinate" parameterType="int" resultType="com.jie.bean.Coordinates$Point">
+    <!--cv 和ct-->
+        select cv,ct
+        from bath
+        where subId=#{subId}
+    </select>
+    <update id="setBathStatus" >
+        update bath
+          set status=#{status}
+         where   subId=#{subId}
+    </update>
+    <select id="getBathStatus" parameterType="int" resultType="int">
+     select status
+     from bath
+      where subId=#{subId}
+    </select>
+</mapper>

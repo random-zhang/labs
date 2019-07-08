@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jie.dao.EmployeeDaoI">
+    <resultMap type="com.wan.model.Employee" id="employeeList">
+        <result column="EMPLOYEE_ID" property="employeeId"/>
+        <result column="EMPLOYEE_NAME"  property="employeeName"/>
+        <result column="DEPARTMENT_ID"  property="departmentId"/>
+        <result column="POSITON_ID" property="positonId"/>
+        <result column="PHONE" property="phone"/>
+        <result column="EMAIL"  property="email"/>
+        <result column="`STATUS`" property="status"/>
+        <result column="PARENT_EMPLOYEE_ID"  property="parentEmployeeId"/>
+        <result column="CREATE_TIME"  property="createTime"/>
+        <result column="UPDATE_TIME"  property="updateTime"/>
+    </resultMap>
+ <!-- <select id="getEmployees" resultMap="employeeList" >
+        SELECT   *  FROM     employee
+    </select>
+ -->
+
+</mapper>
