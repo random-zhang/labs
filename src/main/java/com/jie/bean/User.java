@@ -1,15 +1,16 @@
 package com.jie.bean;
 
+import java.util.Date;
+
 public class User {
     private String userPhone;
-
     private String userName;
-
     private String userPassword;
-
     private String userId;
-
-    private byte[] userPortrait;
+    private String userPortrait;
+    private String userSex;
+    private Date birthday;
+    private String userAddress;
 
     public String getUserPhone() {
         return userPhone;
@@ -43,11 +44,35 @@ public class User {
         this.userId = userId;
     }
 
-    public byte[] getUserPortrait() {
+    public String getUserPortrait() {
         return userPortrait;
     }
 
-    public void setUserPortrait(byte[] userPortrait) {
+    public void setUserPortrait(String userPortrait) {
         this.userPortrait = userPortrait;
+    }
+
+    public String getUserSex() {
+        return userSex;
+    }
+
+    public void setUserSex(String userSex) {
+        this.userSex = userSex;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getUserAddress() {
+        return userAddress;
+    }
+
+    public void setUserAddress(String userAddress) {
+        this.userAddress = userAddress;
     }
 }

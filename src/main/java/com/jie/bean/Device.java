@@ -2,11 +2,9 @@ package com.jie.bean;
 
 public class Device {
     private Integer deviceid;
-
     private String devicename;
-
     private String devicepiture;
-
+    private Integer subId;
     public Integer getDeviceid() {
         return deviceid;
     }
@@ -29,5 +27,13 @@ public class Device {
 
     public void setDevicepiture(String devicepiture) {
         this.devicepiture = devicepiture == null ? null : devicepiture.trim();
+    }
+
+    public Integer getSubId() {
+        return subId;
+    }
+
+    public void setSubId(Integer subId) {
+        this.subId = subId;
     }
 }

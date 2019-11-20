@@ -1,0 +1,19 @@
+.bn{
+    background-color: #ff3300;
+    border-radius: 5px;
+}
+.pic{
+   display:inline ;
+}
+.desc{
+    display:inline ;
+}
+.bnca{
+
+}
+.star{
+    width: 200px;
+    background:url(../../images/icon_star.png);
+    padding-left:70px; height: 20px;
+}
+a{text-decoration:none;}

@@ -1,4 +1,6 @@
 package com.jie.bean;
+import com.alibaba.fastjson.JSON;
+
 import java.io.Serializable;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -20,14 +22,22 @@ public class Coordinates {//坐标系
         return this.coordinates;
     }
     public void setCoordinates(String list) {
+             System.out.println(list);
         if(list!=null&&!list.equals("")){//list=(x,x)(y,y)
             this.coordinates=new ArrayList<>();
-            Pattern pattern = Pattern.compile("(?<=\\()[^\\)]+");
+           /* Pattern pattern = Pattern.compile("(?<=\\()[^\\)]+");
             Matcher matcher = pattern.matcher(list);
             while (matcher.find()) {
                 String s=matcher.group();//aa,a
+                System.out.println(s);
                 insertPoint(new Point(s));
-            }
+            }*/
+           try{
+               coordinates= JSON.parseArray(list,Point.class);
+           }catch (Exception e){
+               e.printStackTrace();
+           }
+
         }
         //this.list = list;
     }
@@ -68,38 +78,5 @@ public class Coordinates {//坐标系
             return string;
         }
 
-    public static  class Point implements  Serializable {
-        double cv;
-        double ct;
-        public Point(double ct,double cv){
-            this.ct=ct;
-            this.cv=cv;
-        }
-        public Point(){
-        }
-        public double getCv() {
-            return cv;
-        }
 
-        public void setCv(double cv) {
-            this.cv = cv;
-        }
-
-        public double getCt() {
-            return ct;
-        }
-
-        public void setCt(double ct) {
-            this.ct = ct;
-        }
-
-        public Point(String coordinate){//n,n
-            String[] s=coordinate.split(",");
-            this.ct=Double.parseDouble(s[0]);
-            this.cv=Double.parseDouble(s[1]);
-        }
-        public String toString(){
-            return "("+ct+","+cv+")";
-        }
-    }
     }

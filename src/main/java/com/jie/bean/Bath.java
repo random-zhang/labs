@@ -1,22 +1,42 @@
 package com.jie.bean;
 
+import java.util.Date;
+
 public class Bath {
-    private Integer subId;
+    private Integer subId,deviceId,status;
 
-    private Integer deviceId;
+    private Double sv,st;
 
-    private Double sv;
-
-    private Double cv;
-
-    private Double st;
-
-    private Double ct;
-
-    private String wssid;
+    private String wssid,points;
 
     private Coordinates coordinates;
 
+    private Date startTime;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+
+    public String getPoints() {
+        return points;
+    }
+
+    public void setPoints(String points) {
+        this.points = points;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
 
     public Double getSv() {
         return sv;
@@ -26,28 +46,12 @@ public class Bath {
         this.sv = sv;
     }
 
-    public Double getCv() {
-        return cv;
-    }
-
-    public void setCv(Double cv) {
-        this.cv = cv;
-    }
-
     public Double getSt() {
         return st;
     }
 
     public void setSt(Double st) {
         this.st = st;
-    }
-
-    public Double getCt() {
-        return ct;
-    }
-
-    public void setCt(Double ct) {
-        this.ct = ct;
     }
 
     public String getWssid() {

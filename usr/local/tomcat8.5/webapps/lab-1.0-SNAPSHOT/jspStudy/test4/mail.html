@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>意见及建议</title>
+    <link type="text/css" rel="stylesheet" href="css/mail.css">
+    <script type="text/javascript">
+        function checkform(myform){
+        //表单校验代码
+        }
+    </script>
+</head>
+<body>
+<div class="mail">
+    <label ><font color="#FF0000" size="5">电子邮件发送</font></label>
+    <div class="content">
+        <form name="mailform" method="post" action="jsp/doMail.jsp" enctype="multipart/form-data"
+              onSubmit="return checkform(this)">
+            <div class="box">
+                <span>收件人</span>
+                <input name="to" type="text" id="to" title="收件人" size="50">
+            </div>
+            <div class="box">
+                <span>发件人</span>
+                <input name="from" type="text" id="from" title="发件人" size="50">
+            </div>
+            <div class="box">
+                <span>密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+                <input name="password" type="password" id="password"
+                       title="发件人信箱密码" size="51">
+            </div>
+            <div class="box">
+                <span>主&nbsp;&nbsp;&nbsp;&nbsp;题</span>
+                <input name="subject" type="text" id="subject" title="邮件主题" size="50">
+            </div>
+            <div class="file" id="file1">
+                <input type="file" name="attachment" id="attachment" value="添加附件">
+                <div class="fileerrorTip1">添加附件</div>
+                <div class="showFileName1"></div>
+            </div>
+            <div class="box">
+                <span>内&nbsp;&nbsp;&nbsp;&nbsp;容</span>
+                <textarea name="content" cols="39" rows="6" id="content" title="邮件内容">
+ </textarea>
+            </div>
+            <div class="btns">
+                <input name="Submit" type="submit" value="发送" />&nbsp;
+                <input name="Submit2" type="reset" value="重置" />
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
